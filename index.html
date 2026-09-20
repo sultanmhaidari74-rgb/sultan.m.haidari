@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Haidari Spatial Lab | Urban Planning & GIS</title>
+
+    <meta name="description"
+          content="Portfolio of an urban planner working with GIS, remote sensing, urban analytics, Python and AI.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0f172a;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 4vw, 30px);
+            font-weight: normal;
+            color: #93c5fd;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+            color: #dbeafe;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            background: white;
+            color: #0f172a;
+        }
+
+        .button.secondary {
+            background: transparent;
+            border: 1px solid #94a3b8;
+            color: white;
+        }
+
+        section {
+            padding: 80px 8%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .skill {
+            padding: 8px 14px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        .card p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 12px;
+            padding: 5px 9px;
+            margin: 3px;
+            border-radius: 5px;
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .research {
+            background: #eef6ff;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                display: block;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px 10px 0 0;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">HAIDARI SPATIAL LAB</div>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Haidari Spatial Lab</h1>
+
+        <h2>
+            Urban Planning × GIS × Remote Sensing × Urban Analytics × AI
+        </h2>
+
+        <p>
+            An urban planning and spatial analysis portfolio exploring
+            cities through geographic information systems, remote sensing,
+            spatial data, Python, machine learning and emerging AI methods.
+        </p>
+
+        <a class="button" href="#projects">
+            Explore Projects
+        </a>
+
+        <a class="button secondary" href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+</section>
+
+<section id="about" class="about">
+
+    <h2>About</h2>
+
+    <p class="section-intro">
+        I am an urban planning graduate interested in understanding
+        cities through spatial data, GIS, remote sensing and computational
+        methods. My work connects traditional urban planning with modern
+        geospatial technologies and urban analytics.
+    </p>
+
+    <div class="skills">
+
+        <span class="skill">Urban Planning</span>
+        <span class="skill">GIS</span>
+        <span class="skill">Remote Sensing</span>
+        <span class="skill">Spatial Analysis</span>
+        <span class="skill">Urban Analytics</span>
+        <span class="skill">Python</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">Artificial Intelligence</span>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2>Featured Projects</h2>
+
+    <p class="section-intro">
+        Selected academic and spatial-analysis projects.
+        Detailed project pages and interactive maps will be added
+        in future versions.
+    </p>
+
+    <div class="projects">
+
+        <div class="card">
+
+            <h3>Kabul Urban Heat Island</h3>
+
+            <p>
+                Spatial-temporal analysis of land surface temperature,
+                land-use/land-cover change and future urban heat patterns
+                in Kabul.
+            </p>
+
+            <span class="tag">LST</span>
+            <span class="tag">LULC</span>
+            <span class="tag">GIS</span>
+            <span class="tag">Remote Sensing</span>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Kabul Natural Hazard Assessment</h3>
+
+            <p>
+                GIS-based assessment of urban environmental hazards
+                including earthquake, flood, landslide and extreme heat.
+            </p>
+
+            <span class="tag">GIS</span>
+            <span class="tag">Risk</span>
+            <span class="tag">Spatial Analysis</span>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Urban Land-Use Prediction</h3>
+
+            <p>
+                Exploration of land-use and land-cover change prediction
+                using geospatial modelling and computational approaches.
+            </p>
+
+            <span class="tag">LULC</span>
+            <span class="tag">ML</span>
+            <span class="tag">GIS</span>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Urban Data Science</h3>
+
+            <p>
+                Developing Python and machine-learning workflows for
+                urban spatial analysis and evidence-based planning.
+            </p>
+
+            <span class="tag">Python</span>
+            <span class="tag">AI</span>
+            <span class="tag">Urban Analytics</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="research" class="research">
+
+    <h2>Research Interests</h2>
+
+    <p class="section-intro">
+        My research interests focus on the relationship between
+        urban development, spatial patterns and environmental conditions.
+    </p>
+
+    <div class="projects">
+
+        <div class="card">
+            <h3>Urban Climate</h3>
+            <p>
+                Urban heat islands, land surface temperature,
+                green-blue infrastructure and climate resilience.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Urban GIS</h3>
+            <p>
+                Spatial analysis, land-use modelling, accessibility,
+                suitability analysis and urban development.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Urban AI</h3>
+            <p>
+                Machine learning, Python, GeoAI and data-driven
+                approaches to understanding urban systems.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+    <h2>Let's Connect</h2>
+
+    <p>
+        Interested in urban planning, GIS, spatial data,
+        remote sensing or urban analytics?
+    </p>
+
+    <a class="button" href="https://github.com/sultanmhaidari74-rgb">
+        GitHub
+    </a>
+
+    <a class="button" href="#">
+        LinkedIn
+    </a>
+
+</section>
+
+<footer>
+
+    © 2026 Haidari Spatial Lab.
+    Built with HTML, CSS and GitHub Pages.
+
+</footer>
+
+</body>
+</html>
