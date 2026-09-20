@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /* ---------- MOBILE NAV ---------- */
-    const navToggle  = document.getElementById('navToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (navToggle && mobileMenu) {
-        navToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        mobileMenu.querySelectorAll('a').forEach(a =>
-            a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
-        );
-    }
+const navToggle  = document.getElementById('navToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+    mobileMenu.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => mobileMenu.classList.remove('active'))
+    );
+}
 
     /* ---------- GALLERY FILTERS ---------- */
     const filterBtns   = document.querySelectorAll('.filter-btn');
