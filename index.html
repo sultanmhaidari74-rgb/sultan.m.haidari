@@ -4,108 +4,381 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Haidari Spatial Lab | Urban Planning & GIS</title>
-
+    <title>Sultan M. Haidari | Urban Planner & GIS Analyst</title>
     <meta name="description"
-          content="Portfolio of an urban planner working with GIS, remote sensing, urban analytics, Python and AI.">
+          content="Portfolio of Sultan Mohammad Haidari - Urban Planner & GIS Analyst specializing in remote sensing, urban analytics, Python and AI.">
+    <meta name="author" content="Sultan Mohammad Haidari">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             line-height: 1.6;
             color: #1f2937;
             background: #f8fafc;
+            overflow-x: hidden;
         }
 
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #0f172a;
-            padding: 15px 6%;
+        h1, h2, h3, .logo { font-family: 'Space Grotesk', sans-serif; }
+
+        a { text-decoration: none; }
+
+        /* ============================================
+           HERO — DARK, PHOTO-CENTERED DESIGN
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse at 50% 40%, rgba(14, 165, 233, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(30, 58, 138, 0.35) 0%, transparent 60%),
+                linear-gradient(180deg, #020617 0%, #0f172a 60%, #020617 100%);
+            color: white;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 6% 40px;
+        }
+
+        /* Grid overlay pattern */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+            pointer-events: none;
+        }
+
+        /* ============ TOP NAV PILL ============ */
+        .top-nav {
+            position: relative;
+            z-index: 10;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        .logo {
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
+        .nav-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 6px 8px;
+            border-radius: 50px;
         }
 
-        nav a {
+        .nav-pill a {
             color: #cbd5e1;
-            text-decoration: none;
-            margin-left: 18px;
-            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
         }
 
-        nav a:hover {
+        .nav-pill a:hover {
             color: white;
+            background: rgba(255,255,255,0.06);
         }
 
-        .hero {
-            min-height: 88vh;
+        .nav-pill .cv-btn {
+            background: #0ea5e9;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-pill .cv-btn:hover {
+            background: #0284c7;
+        }
+
+        .brand-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 8px 18px 8px 10px;
+            border-radius: 50px;
+        }
+
+        .brand-pill .brand-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0ea5e9, #1e40af);
             display: flex;
             align-items: center;
-            padding: 70px 8%;
-            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
             color: white;
         }
 
-        .hero-content {
-            max-width: 850px;
+        .brand-pill span {
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.3px;
         }
 
-        .hero h1 {
-            font-size: clamp(42px, 8vw, 76px);
-            line-height: 1.05;
-            margin-bottom: 20px;
+        /* ============ HERO MAIN ============ */
+        .hero-main {
+            position: relative;
+            z-index: 5;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            text-align: center;
         }
 
-        .hero h2 {
-            font-size: clamp(20px, 4vw, 30px);
-            font-weight: normal;
-            color: #93c5fd;
-            margin-bottom: 25px;
+        /* Floating badges (left & right) */
+        .badge {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: #e2e8f0;
+            font-weight: 500;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .hero p {
-            max-width: 700px;
-            font-size: 18px;
-            color: #dbeafe;
-            margin-bottom: 30px;
+        .badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        .button {
+        .badge-left { top: 20%; left: 0; }
+        .badge-right { top: 20%; right: 0; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Ghost typography behind photo */
+        .ghost-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(100px, 18vw, 260px);
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(148, 163, 184, 0.12);
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Photo container */
+        .photo-wrap {
+            position: relative;
+            z-index: 3;
+            width: clamp(240px, 32vw, 380px);
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            filter: drop-shadow(0 20px 60px rgba(14, 165, 233, 0.3));
+            border-radius: 20px;
+            mask-image: linear-gradient(180deg, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(180deg, black 70%, transparent 100%);
+        }
+
+        /* Text overlay on hero */
+        .hero-text {
+            position: relative;
+            z-index: 4;
+            margin-top: -60px;
+            text-align: center;
+        }
+
+        .role-line {
             display: inline-block;
-            padding: 13px 22px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            background: white;
-            color: #0f172a;
+            padding: 6px 16px;
+            background: rgba(14, 165, 233, 0.12);
+            border: 1px solid rgba(14, 165, 233, 0.35);
+            border-radius: 50px;
+            font-size: 13px;
+            color: #7dd3fc;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
         }
 
-        .button.secondary {
-            background: transparent;
-            border: 1px solid #94a3b8;
+        .hero-text h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.05;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text h1 .accent {
+            background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* CTA buttons */
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14.5px;
+            transition: all 0.25s;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
             color: white;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.35);
         }
 
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.5);
+        }
+
+        .btn-outline {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(148, 163, 184, 0.6);
+        }
+
+        /* ============ BOTTOM FEATURE CARDS ============ */
+        .bottom-features {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding-top: 20px;
+        }
+
+        .feature-pill {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: 14px;
+            min-width: 220px;
+        }
+
+        .feature-pill .feature-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(30, 64, 175, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .feature-pill .feature-text strong {
+            display: block;
+            color: white;
+            font-size: 13.5px;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .feature-pill .feature-text span {
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        /* ============================================
+           REST OF THE PAGE (About, Projects, etc.)
+           ============================================ */
         section {
             padding: 80px 8%;
             max-width: 1200px;
@@ -114,8 +387,20 @@
 
         section h2 {
             font-size: 34px;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
             color: #0f172a;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #0ea5e9;
+            border-radius: 2px;
+            margin-top: 8px;
         }
 
         .section-intro {
@@ -124,9 +409,47 @@
             margin-bottom: 40px;
         }
 
-        .about {
-            background: white;
+        /* ABOUT */
+        .about { background: white; }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 50px;
+            align-items: start;
         }
+
+        .profile-photo {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 50%;
+            border: 4px solid #e2e8f0;
+            background: #e2e8f0;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+        }
+
+        .about h3 {
+            font-size: 26px;
+            margin-bottom: 6px;
+            color: #0f172a;
+        }
+
+        .role {
+            color: #0ea5e9;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .meta {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .about p { color: #475569; margin-bottom: 15px; }
 
         .skills {
             display: flex;
@@ -139,9 +462,12 @@
             padding: 8px 14px;
             background: #e2e8f0;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: #334155;
         }
 
+        /* CARDS */
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -154,40 +480,33 @@
             border-radius: 14px;
             border: 1px solid #e2e8f0;
             box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .card h3 {
-            margin-bottom: 10px;
-            color: #0f172a;
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
         }
 
-        .card p {
-            color: #64748b;
-            margin-bottom: 15px;
-        }
+        .card h3 { margin-bottom: 10px; color: #0f172a; font-size: 19px; }
+        .card p { color: #64748b; margin-bottom: 15px; font-size: 15px; }
 
         .tag {
             display: inline-block;
             font-size: 12px;
             padding: 5px 9px;
-            margin: 3px;
+            margin: 3px 3px 3px 0;
             border-radius: 5px;
             background: #dbeafe;
             color: #1e40af;
+            font-weight: 600;
         }
 
-        .research {
-            background: #eef6ff;
-        }
+        .research { background: #eef6ff; max-width: none; }
+        .research-inner { max-width: 1200px; margin: auto; }
 
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
-            color: #64748b;
-            margin-bottom: 20px;
-        }
+        .contact { text-align: center; background: white; }
+        .contact p { color: #64748b; margin-bottom: 20px; }
 
         footer {
             text-align: center;
@@ -197,235 +516,297 @@
             font-size: 14px;
         }
 
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 900px) {
+            .badge-left, .badge-right { display: none; }
+            .photo-wrap { width: clamp(200px, 55vw, 300px); }
+        }
+
         @media (max-width: 700px) {
-            nav {
-                display: block;
+            .hero { padding: 15px 5% 30px; }
+
+            .top-nav { justify-content: center; }
+            .nav-pill a { padding: 7px 12px; font-size: 12px; }
+            .nav-pill a:not(.cv-btn):nth-child(n+4) { display: none; }
+
+            .hero-main { padding: 30px 0; }
+            .hero-text { margin-top: -30px; }
+            .tagline { font-size: 14.5px; }
+
+            .bottom-features { flex-direction: column; }
+            .feature-pill { width: 100%; }
+
+            section { padding: 60px 6%; }
+            section h2 { font-size: 28px; }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
             }
 
-            nav a {
-                display: inline-block;
-                margin: 8px 10px 0 0;
-            }
-
-            .hero {
-                min-height: 80vh;
-            }
-
-            section {
-                padding: 60px 6%;
-            }
+            .profile-photo { max-width: 180px; margin: 0 auto; }
+            .skills { justify-content: center; }
         }
     </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">HAIDARI SPATIAL LAB</div>
-
-    <div>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#research">Research</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
-
+<!-- ==================================================
+     HERO SECTION
+     ================================================== -->
 <section class="hero">
 
-    <div class="hero-content">
+    <!-- Top Navigation -->
+    <div class="top-nav">
 
-        <h1>Haidari Spatial Lab</h1>
+        <div class="brand-pill">
+            <div class="brand-icon">SH</div>
+            <span>HAIDARI SPATIAL LAB</span>
+        </div>
 
-        <h2>
-            Urban Planning × GIS × Remote Sensing × Urban Analytics × AI
-        </h2>
+        <div class="nav-pill">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#research">Research</a>
+            <a href="#contact">Contact</a>
+            <a href="images/CV_2026.pdf" download class="cv-btn">
+                📄 CV
+            </a>
+        </div>
 
-        <p>
-            An urban planning and spatial analysis portfolio exploring
-            cities through geographic information systems, remote sensing,
-            spatial data, Python, machine learning and emerging AI methods.
-        </p>
+    </div>
 
-        <a class="button" href="#projects">
-            Explore Projects
-        </a>
+    <!-- Main Hero Content -->
+    <div class="hero-main">
 
-        <a class="button secondary" href="#contact">
-            Contact
-        </a>
+        <!-- Floating status badge (left) -->
+        <div class="badge badge-left">
+            <span class="dot"></span>
+            Available for collaboration
+        </div>
+
+        <!-- Floating role badge (right) -->
+        <div class="badge badge-right">
+            <span>🌍</span>
+            Kabul · Afghanistan
+        </div>
+
+        <!-- Ghost background typography -->
+        <div class="ghost-text">HAIDARI</div>
+
+        <!-- Profile Photo -->
+        <div class="photo-wrap">
+            <img src="images/ProfileCity.png" alt="Sultan Mohammad Haidari">
+        </div>
+
+        <!-- Text content -->
+        <div class="hero-text">
+            <div class="role-line">URBAN PLANNER · GIS ANALYST</div>
+
+            <h1>
+                Sultan Mohammad<br>
+                <span class="accent">Haidari</span>
+            </h1>
+
+            <p class="tagline">
+                Exploring cities through GIS, remote sensing, spatial analysis,
+                Python, and AI — turning urban data into evidence-based planning.
+            </p>
+
+            <div class="cta-group">
+                <a href="#projects" class="btn btn-primary">
+                    🚀 View Projects
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    ✉️ Get in Touch
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Feature Cards -->
+    <div class="bottom-features">
+
+        <div class="feature-pill">
+            <div class="feature-icon">🛰️</div>
+            <div class="feature-text">
+                <strong>Remote Sensing</strong>
+                <span>GEE · SNAP · Landsat · Sentinel</span>
+            </div>
+        </div>
+
+        <div class="feature-pill">
+            <div class="feature-icon">🗺️</div>
+            <div class="feature-text">
+                <strong>GIS & Spatial Analysis</strong>
+                <span>QGIS · ArcGIS · Python</span>
+            </div>
+        </div>
+
+        <div class="feature-pill">
+            <div class="feature-icon">🏙️</div>
+            <div class="feature-text">
+                <strong>Kabul UHI Research</strong>
+                <span>Urban Heat Island · LST · LULC</span>
+            </div>
+        </div>
 
     </div>
 
 </section>
 
-<section id="about" class="about">
 
+<!-- ==================================================
+     ABOUT
+     ================================================== -->
+<section id="about" class="about">
     <h2>About</h2>
 
-    <p class="section-intro">
-        I am an urban planning graduate interested in understanding
-        cities through spatial data, GIS, remote sensing and computational
-        methods. My work connects traditional urban planning with modern
-        geospatial technologies and urban analytics.
-    </p>
+    <div class="about-grid">
+        <img src="images/ProfileWhite.png"
+             alt="Sultan Mohammad Haidari"
+             class="profile-photo">
 
-    <div class="skills">
+        <div>
+            <h3>Sultan Mohammad Haidari</h3>
+            <p class="role">Urban Planner &amp; GIS Analyst</p>
+            <p class="meta">BSc in Urban Planning · Kabul University · 2026</p>
 
-        <span class="skill">Urban Planning</span>
-        <span class="skill">GIS</span>
-        <span class="skill">Remote Sensing</span>
-        <span class="skill">Spatial Analysis</span>
-        <span class="skill">Urban Analytics</span>
-        <span class="skill">Python</span>
-        <span class="skill">Machine Learning</span>
-        <span class="skill">Artificial Intelligence</span>
+            <p>
+                I am an urban planning graduate specializing in the application of
+                GIS, remote sensing, and spatial data science to urban challenges.
+                My work focuses on urban heat islands, land-use and land-cover change,
+                natural hazard assessment, and the integration of Python and AI
+                into evidence-based planning workflows.
+            </p>
 
+            <p>
+                My current research — a monograph on Kabul's Urban Heat Island —
+                investigates the relationship between urban growth, land surface
+                temperature, and environmental resilience, combining satellite
+                imagery, spatial modelling, and computational analysis.
+            </p>
+
+            <div class="skills">
+                <span class="skill">Urban Planning</span>
+                <span class="skill">GIS (QGIS, ArcGIS)</span>
+                <span class="skill">Remote Sensing (GEE, SNAP)</span>
+                <span class="skill">Spatial Analysis</span>
+                <span class="skill">Urban Analytics</span>
+                <span class="skill">Python</span>
+                <span class="skill">Machine Learning</span>
+                <span class="skill">Artificial Intelligence</span>
+            </div>
+        </div>
     </div>
-
 </section>
 
+
+<!-- ==================================================
+     PROJECTS
+     ================================================== -->
 <section id="projects">
-
     <h2>Featured Projects</h2>
-
     <p class="section-intro">
-        Selected academic and spatial-analysis projects.
-        Detailed project pages and interactive maps will be added
-        in future versions.
+        Selected academic and spatial-analysis projects. Detailed project pages
+        with maps and interactive content are coming soon.
     </p>
 
     <div class="projects">
-
         <div class="card">
-
             <h3>Kabul Urban Heat Island</h3>
-
-            <p>
-                Spatial-temporal analysis of land surface temperature,
-                land-use/land-cover change and future urban heat patterns
-                in Kabul.
-            </p>
-
+            <p>Spatial-temporal analysis of land surface temperature, land-use/land-cover change and future urban heat patterns in Kabul.</p>
             <span class="tag">LST</span>
             <span class="tag">LULC</span>
             <span class="tag">GIS</span>
             <span class="tag">Remote Sensing</span>
-
         </div>
 
         <div class="card">
-
             <h3>Kabul Natural Hazard Assessment</h3>
-
-            <p>
-                GIS-based assessment of urban environmental hazards
-                including earthquake, flood, landslide and extreme heat.
-            </p>
-
+            <p>GIS-based assessment of urban environmental hazards including earthquake, flood, landslide and extreme heat.</p>
             <span class="tag">GIS</span>
             <span class="tag">Risk</span>
             <span class="tag">Spatial Analysis</span>
-
         </div>
 
         <div class="card">
-
             <h3>Urban Land-Use Prediction</h3>
-
-            <p>
-                Exploration of land-use and land-cover change prediction
-                using geospatial modelling and computational approaches.
-            </p>
-
+            <p>Exploration of land-use and land-cover change prediction using geospatial modelling and computational approaches.</p>
             <span class="tag">LULC</span>
             <span class="tag">ML</span>
             <span class="tag">GIS</span>
-
         </div>
 
         <div class="card">
-
             <h3>Urban Data Science</h3>
-
-            <p>
-                Developing Python and machine-learning workflows for
-                urban spatial analysis and evidence-based planning.
-            </p>
-
+            <p>Developing Python and machine-learning workflows for urban spatial analysis and evidence-based planning.</p>
             <span class="tag">Python</span>
             <span class="tag">AI</span>
             <span class="tag">Urban Analytics</span>
-
         </div>
-
     </div>
-
 </section>
 
+
+<!-- ==================================================
+     RESEARCH
+     ================================================== -->
 <section id="research" class="research">
+    <div class="research-inner">
+        <h2>Research Interests</h2>
+        <p class="section-intro">
+            My research focuses on the relationship between urban development,
+            spatial patterns and environmental conditions.
+        </p>
 
-    <h2>Research Interests</h2>
-
-    <p class="section-intro">
-        My research interests focus on the relationship between
-        urban development, spatial patterns and environmental conditions.
-    </p>
-
-    <div class="projects">
-
-        <div class="card">
-            <h3>Urban Climate</h3>
-            <p>
-                Urban heat islands, land surface temperature,
-                green-blue infrastructure and climate resilience.
-            </p>
+        <div class="projects">
+            <div class="card">
+                <h3>Urban Climate</h3>
+                <p>Urban heat islands, land surface temperature, green-blue infrastructure and climate resilience.</p>
+            </div>
+            <div class="card">
+                <h3>Urban GIS</h3>
+                <p>Spatial analysis, land-use modelling, accessibility, suitability analysis and urban development.</p>
+            </div>
+            <div class="card">
+                <h3>Urban AI</h3>
+                <p>Machine learning, Python, GeoAI and data-driven approaches to understanding urban systems.</p>
+            </div>
         </div>
-
-        <div class="card">
-            <h3>Urban GIS</h3>
-            <p>
-                Spatial analysis, land-use modelling, accessibility,
-                suitability analysis and urban development.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Urban AI</h3>
-            <p>
-                Machine learning, Python, GeoAI and data-driven
-                approaches to understanding urban systems.
-            </p>
-        </div>
-
     </div>
-
 </section>
 
+
+<!-- ==================================================
+     CONTACT
+     ================================================== -->
 <section id="contact" class="contact">
-
     <h2>Let's Connect</h2>
+    <p>Interested in urban planning, GIS, spatial data, remote sensing or urban analytics?</p>
 
-    <p>
-        Interested in urban planning, GIS, spatial data,
-        remote sensing or urban analytics?
-    </p>
-
-    <a class="button" href="https://github.com/sultanmhaidari74-rgb">
+    <a class="btn btn-primary" href="mailto:sultan.m.haidari74@gmail.com" style="margin: 5px;">
+        ✉️ Email Me
+    </a>
+    <a class="btn btn-outline" href="https://github.com/sultanmhaidari74-rgb" target="_blank" rel="noopener" style="margin: 5px; border-color:#0f172a; color:#0f172a;">
         GitHub
     </a>
-
-    <a class="button" href="#">
+    <a class="btn btn-outline" href="https://www.linkedin.com/in/sultan-mohammad-haidari-6aa6632a9" target="_blank" rel="noopener" style="margin: 5px; border-color:#0f172a; color:#0f172a;">
         LinkedIn
     </a>
-
 </section>
 
+
+<!-- ==================================================
+     FOOTER
+     ================================================== -->
 <footer>
-
-    © 2026 Haidari Spatial Lab.
-    Built with HTML, CSS and GitHub Pages.
-
+    © 2026 Haidari Spatial Lab · Sultan Mohammad Haidari · Built with HTML, CSS and GitHub Pages
 </footer>
 
 </body>
