@@ -15,85 +15,50 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ink:     '#0f172a',
-                        ink2:    '#020617',
-                        sky1:    '#0ea5e9',
-                        sky2:    '#0284c7',
-                        slate1:  '#64748b',
-                    },
-                    fontFamily: {
-                        sans:    ['Inter', 'sans-serif'],
-                        display: ['"Space Grotesk"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom stylesheet (for hero + custom bits Tailwind doesn't cover) -->
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="font-sans bg-slate-50 text-slate-800">
+<body>
 
-<!-- ==================================================
-     NAVIGATION
-     ================================================== -->
-<nav class="sticky top-0 z-50 bg-ink/85 backdrop-blur-lg border-b border-slate-700/20">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-3">
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav">
+    <a href="#home" class="nav-brand">
+        <img src="images/ProfileWhite.png" alt="Sultan M. Haidari" class="nav-logo">
+        <span class="nav-brand-text">HAIDARI SPATIAL LAB</span>
+    </a>
 
-        <!-- Brand -->
-       <a href="#home" class="flex items-center gap-3 text-white font-display font-bold text-sm tracking-wide">
-    <img src="images/ProfileWhite.png" alt="Sultan M. Haidari"
-         class="w-10 h-10 rounded-full object-cover object-top border-2 border-sky1/60 shadow-md">
-    <span class="hidden sm:inline">HAIDARI SPATIAL LAB</span>
-</a>
-
-        <!-- Links -->
-        <div id="navLinks" class="hidden md:flex items-center gap-1">
-            <a href="#about"    class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full text-sm font-medium transition">About</a>
-            <a href="#projects" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full text-sm font-medium transition">Projects</a>
-            <a href="#research" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full text-sm font-medium transition">Research</a>
-            <a href="#gallery"  class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full text-sm font-medium transition">Gallery</a>
-            <a href="#cv"       class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full text-sm font-medium transition">CV</a>
-            <a href="#contact"  class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-full text-sm font-medium transition">Contact</a>
-            <a href="images/CV_2026.pdf" download
-               class="ml-2 inline-flex items-center gap-2 bg-gradient-to-br from-sky1 to-sky2 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg shadow-sky-500/30 hover:-translate-y-px transition">
-                <i class="fa-solid fa-file-pdf"></i> CV
-            </a>
-        </div>
-
-        <!-- Mobile toggle -->
-        <button id="navToggle" class="md:hidden text-white text-2xl w-10 h-10 rounded-lg border border-slate-600/40 flex items-center justify-center">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden px-6 pb-6 flex-col gap-2 bg-ink/95 backdrop-blur-lg border-t border-slate-700/20">
-        <a href="#about"    class="text-slate-300 hover:text-white py-3 text-center rounded-lg hover:bg-white/5">About</a>
-        <a href="#projects" class="text-slate-300 hover:text-white py-3 text-center rounded-lg hover:bg-white/5">Projects</a>
-        <a href="#research" class="text-slate-300 hover:text-white py-3 text-center rounded-lg hover:bg-white/5">Research</a>
-        <a href="#gallery"  class="text-slate-300 hover:text-white py-3 text-center rounded-lg hover:bg-white/5">Gallery</a>
-        <a href="#cv"       class="text-slate-300 hover:text-white py-3 text-center rounded-lg hover:bg-white/5">CV</a>
-        <a href="#contact"  class="text-slate-300 hover:text-white py-3 text-center rounded-lg hover:bg-white/5">Contact</a>
-        <a href="images/CV_2026.pdf" download
-           class="mt-2 flex items-center justify-center gap-2 bg-gradient-to-br from-sky1 to-sky2 text-white py-3 rounded-full font-semibold">
-            <i class="fa-solid fa-file-pdf"></i> Download CV
+    <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+        <a href="images/CV_2026.pdf" download class="nav-cv-btn">
+            <i class="fa-solid fa-file-pdf"></i> CV
         </a>
     </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 </nav>
 
-<!-- ==================================================
-     HERO
-     ================================================== -->
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+    <a href="images/CV_2026.pdf" download class="mobile-cv-btn">
+        <i class="fa-solid fa-file-pdf"></i> Download CV
+    </a>
+</div>
+
+<!-- ============ HERO ============ -->
 <section class="hero" id="home">
 
     <div class="hero-badge hero-badge-left">
@@ -161,24 +126,20 @@
     </a>
 </section>
 
-<!-- ==================================================
-     ABOUT
-     ================================================== -->
-<section class="py-24 px-6 bg-white" id="about">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-ink mb-2">About</h2>
-        <div class="w-16 h-1 bg-gradient-to-r from-sky1 to-sky2 rounded-full mb-10"></div>
+<!-- ============ ABOUT ============ -->
+<section class="section section-about" id="about">
+    <div class="container">
+        <h2 class="section-title">About</h2>
 
-        <div class="grid md:grid-cols-[240px_1fr] gap-12 items-start">
-            <img src="images/ProfileWhite.png" alt="Sultan Mohammad Haidari"
-                 class="w-full max-w-[240px] mx-auto aspect-square object-cover object-top rounded-full border-4 border-slate-200 shadow-lg">
+        <div class="about-grid">
+            <img src="images/ProfileWhite.png" alt="Sultan Mohammad Haidari" class="about-photo">
 
             <div>
-                <h3 class="font-display text-2xl font-bold text-ink mb-1">Sultan Mohammad Haidari</h3>
-                <p class="text-sky1 font-semibold text-sm mb-1">Urban Planner &amp; GIS Analyst</p>
-                <p class="text-slate1 text-sm mb-6">BSc in Urban Planning · Kabul University · 2026</p>
+                <h3>Sultan Mohammad Haidari</h3>
+                <p class="about-role">Urban Planner &amp; GIS Analyst</p>
+                <p class="about-meta">BSc in Urban Planning · Kabul University · 2026</p>
 
-                <p class="text-slate-600 mb-4">
+                <p>
                     I am an urban planning graduate specializing in the application of
                     GIS, remote sensing, and spatial data science to urban challenges.
                     My work focuses on urban heat islands, land-use and land-cover change,
@@ -186,153 +147,145 @@
                     into evidence-based planning workflows.
                 </p>
 
-                <p class="text-slate-600 mb-6">
+                <p>
                     My current research — a monograph on Kabul's Urban Heat Island —
                     investigates the relationship between urban growth, land surface
-                    temperature, and environmental resilience.
+                    temperature, and environmental resilience, combining satellite
+                    imagery, spatial modelling, and computational analysis.
                 </p>
 
-                <div class="flex flex-wrap gap-2 mt-6">
-                    <span class="px-3.5 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700">Urban Planning</span>
-                    <span class="px-3.5 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700">GIS (QGIS, ArcGIS)</span>
-                    <span class="px-3.5 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700">Remote Sensing</span>
-                    <span class="px-3.5 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700">Spatial Analysis</span>
-                    <span class="px-3.5 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700">Python</span>
-                    <span class="px-3.5 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700">Machine Learning</span>
-                    <span class="px-3.5 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-700">AI</span>
+                <div class="skills">
+                    <span class="skill">Urban Planning</span>
+                    <span class="skill">GIS (QGIS, ArcGIS)</span>
+                    <span class="skill">Remote Sensing (GEE, SNAP)</span>
+                    <span class="skill">Spatial Analysis</span>
+                    <span class="skill">Urban Analytics</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">Machine Learning</span>
+                    <span class="skill">Artificial Intelligence</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================================================
-     PROJECTS
-     ================================================== -->
-<section class="py-24 px-6 bg-slate-50" id="projects">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-ink mb-2">Featured Projects</h2>
-        <div class="w-16 h-1 bg-gradient-to-r from-sky1 to-sky2 rounded-full mb-4"></div>
-        <p class="text-slate1 mb-10 max-w-2xl">Selected academic and spatial-analysis projects. Click a card to see details.</p>
+<!-- ============ PROJECTS ============ -->
+<section class="section section-projects" id="projects">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-intro">
+            Selected academic and spatial-analysis projects. Click a card to see details.
+        </p>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-3">
 
-            <article class="card-project bg-white p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-sky1 transition-all cursor-pointer" data-project="uhi">
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-100 to-blue-100 flex items-center justify-center text-2xl mb-5">
-                    <i class="fa-solid fa-fire text-orange-500"></i>
+            <article class="card card-project" data-project="uhi">
+                <div class="card-icon icon-orange"><i class="fa-solid fa-fire"></i></div>
+                <h3>Kabul Urban Heat Island</h3>
+                <p>Spatial-temporal analysis of land surface temperature, LULC change and future urban heat patterns in Kabul.</p>
+                <div class="tags">
+                    <span class="tag">LST</span>
+                    <span class="tag">LULC</span>
+                    <span class="tag">UTFVI</span>
+                    <span class="tag">Remote Sensing</span>
                 </div>
-                <h3 class="font-display text-lg font-bold text-ink mb-2">Kabul Urban Heat Island</h3>
-                <p class="text-slate-500 text-sm mb-5">Spatial-temporal analysis of land surface temperature, LULC change and future urban heat patterns in Kabul.</p>
-                <div class="flex flex-wrap gap-1.5 mb-4">
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">LST</span>
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">LULC</span>
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">UTFVI</span>
-                </div>
-                <span class="text-sky1 font-semibold text-sm">View project <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                <span class="card-more">View project <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <article class="card-project bg-white p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-sky1 transition-all cursor-pointer" data-project="hazard">
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center text-2xl mb-5">
-                    <i class="fa-solid fa-triangle-exclamation text-amber-600"></i>
+            <article class="card card-project" data-project="hazard">
+                <div class="card-icon icon-amber"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h3>Kabul Natural Hazard Assessment</h3>
+                <p>GIS-based assessment of urban environmental hazards including earthquake, flood, landslide and extreme heat.</p>
+                <div class="tags">
+                    <span class="tag">GIS</span>
+                    <span class="tag">Risk</span>
+                    <span class="tag">MCDA</span>
                 </div>
-                <h3 class="font-display text-lg font-bold text-ink mb-2">Kabul Natural Hazard Assessment</h3>
-                <p class="text-slate-500 text-sm mb-5">GIS-based assessment of urban environmental hazards including earthquake, flood, landslide and extreme heat.</p>
-                <div class="flex flex-wrap gap-1.5 mb-4">
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">GIS</span>
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">Risk</span>
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">MCDA</span>
-                </div>
-                <span class="text-sky1 font-semibold text-sm">View project <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                <span class="card-more">View project <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <article class="card-project bg-white p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-sky1 transition-all cursor-pointer" data-project="lulc">
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-2xl mb-5">
-                    <i class="fa-solid fa-earth-asia text-emerald-600"></i>
+            <article class="card card-project" data-project="lulc">
+                <div class="card-icon icon-emerald"><i class="fa-solid fa-earth-asia"></i></div>
+                <h3>LULC Change &amp; Prediction</h3>
+                <p>Land-use and land-cover change detection and future prediction using geospatial modelling.</p>
+                <div class="tags">
+                    <span class="tag">LULC</span>
+                    <span class="tag">ML</span>
+                    <span class="tag">CA-Markov</span>
                 </div>
-                <h3 class="font-display text-lg font-bold text-ink mb-2">LULC Change &amp; Prediction</h3>
-                <p class="text-slate-500 text-sm mb-5">Land-use and land-cover change detection and future prediction using geospatial modelling.</p>
-                <div class="flex flex-wrap gap-1.5 mb-4">
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">LULC</span>
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">ML</span>
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">CA-Markov</span>
-                </div>
-                <span class="text-sky1 font-semibold text-sm">View project <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                <span class="card-more">View project <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
         </div>
     </div>
 </section>
 
-<!-- ==================================================
-     RESEARCH
-     ================================================== -->
-<section class="py-24 px-6 bg-blue-50" id="research">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-ink mb-2">Research</h2>
-        <div class="w-16 h-1 bg-gradient-to-r from-sky1 to-sky2 rounded-full mb-4"></div>
-        <p class="text-slate1 mb-10 max-w-2xl">My research focuses on the relationship between urban development, spatial patterns and environmental conditions.</p>
+<!-- ============ RESEARCH ============ -->
+<section class="section section-research" id="research">
+    <div class="container">
+        <h2 class="section-title">Research</h2>
+        <p class="section-intro">
+            My research focuses on the relationship between urban development,
+            spatial patterns and environmental conditions.
+        </p>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-3">
 
-            <article class="card-research bg-white p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-sky1 transition-all cursor-pointer" data-research="uhi-paper">
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-100 to-blue-100 flex items-center justify-center text-2xl mb-5">
-                    <i class="fa-solid fa-book text-indigo-600"></i>
+            <article class="card card-research" data-research="uhi-paper">
+                <div class="card-icon icon-indigo"><i class="fa-solid fa-book"></i></div>
+                <h3>Kabul UHI Research Paper</h3>
+                <p>A monograph investigating the relationship between urban growth and land surface temperature in Kabul.</p>
+                <div class="tags">
+                    <span class="tag">Urban Climate</span>
+                    <span class="tag tag-amber">In Progress</span>
                 </div>
-                <h3 class="font-display text-lg font-bold text-ink mb-2">Kabul UHI Research Paper</h3>
-                <p class="text-slate-500 text-sm mb-5">A monograph investigating the relationship between urban growth and land surface temperature in Kabul.</p>
-                <div class="flex flex-wrap gap-1.5">
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">Urban Climate</span>
-                    <span class="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-semibold rounded-md">In Progress</span>
-                </div>
+                <span class="card-more">Read more <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <article class="card-research bg-white p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-sky1 transition-all cursor-pointer" data-research="uhi-chapter">
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-2xl mb-5">
-                    <i class="fa-solid fa-book-open text-purple-600"></i>
+            <article class="card card-research" data-research="uhi-chapter">
+                <div class="card-icon icon-purple"><i class="fa-solid fa-book-open"></i></div>
+                <h3>UHI Chapter</h3>
+                <p>Book chapter focusing on Urban Heat Island methodologies, indices and applications.</p>
+                <div class="tags">
+                    <span class="tag">UTFVI</span>
+                    <span class="tag">Methodology</span>
                 </div>
-                <h3 class="font-display text-lg font-bold text-ink mb-2">UHI Chapter</h3>
-                <p class="text-slate-500 text-sm mb-5">Book chapter focusing on Urban Heat Island methodologies, indices and applications.</p>
-                <div class="flex flex-wrap gap-1.5">
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">UTFVI</span>
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">Methodology</span>
-                </div>
+                <span class="card-more">Read more <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
-            <article class="card-research bg-white p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-sky1 transition-all cursor-pointer" data-research="climate-agri">
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-lime-100 to-emerald-100 flex items-center justify-center text-2xl mb-5">
-                    <i class="fa-solid fa-wheat-awn text-lime-600"></i>
+            <article class="card card-research" data-research="climate-agri">
+                <div class="card-icon icon-lime"><i class="fa-solid fa-wheat-awn"></i></div>
+                <h3>Climate Change &amp; Agriculture</h3>
+                <p>Investigating climate change impacts on agricultural systems using geospatial approaches.</p>
+                <div class="tags">
+                    <span class="tag">NDVI</span>
+                    <span class="tag">Climate</span>
                 </div>
-                <h3 class="font-display text-lg font-bold text-ink mb-2">Climate Change &amp; Agriculture</h3>
-                <p class="text-slate-500 text-sm mb-5">Investigating climate change impacts on agricultural systems using geospatial approaches.</p>
-                <div class="flex flex-wrap gap-1.5">
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">NDVI</span>
-                    <span class="px-2.5 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md">Climate</span>
-                </div>
+                <span class="card-more">Read more <i class="fa-solid fa-arrow-right"></i></span>
             </article>
 
         </div>
     </div>
 </section>
 
-<!-- ==================================================
-     GALLERY
-     ================================================== -->
-<section class="py-24 px-6 bg-white" id="gallery">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-ink mb-2">Maps &amp; GIS Gallery</h2>
-        <div class="w-16 h-1 bg-gradient-to-r from-sky1 to-sky2 rounded-full mb-4"></div>
-        <p class="text-slate1 mb-8 max-w-2xl">Spatial analysis outputs — LST, LULC, UTFVI and layout maps. Click any map to view full size.</p>
+<!-- ============ GALLERY ============ -->
+<section class="section section-gallery" id="gallery">
+    <div class="container">
+        <h2 class="section-title">Maps &amp; GIS Gallery</h2>
+        <p class="section-intro">
+            Spatial analysis outputs — LST, LULC, UTFVI and layout maps.
+            Click any map to view full size.
+        </p>
 
-        <!-- Filters -->
-        <div class="flex flex-wrap gap-2 mb-8">
-            <button class="filter-btn active px-5 py-2.5 rounded-full border border-slate-200 bg-gradient-to-br from-sky1 to-sky2 text-white font-semibold text-sm" data-filter="all">All</button>
-            <button class="filter-btn px-5 py-2.5 rounded-full border border-slate-200 bg-white text-slate-600 font-semibold text-sm hover:border-sky1 hover:text-sky1 transition" data-filter="lst">LST</button>
-            <button class="filter-btn px-5 py-2.5 rounded-full border border-slate-200 bg-white text-slate-600 font-semibold text-sm hover:border-sky1 hover:text-sky1 transition" data-filter="lulc">LULC</button>
-            <button class="filter-btn px-5 py-2.5 rounded-full border border-slate-200 bg-white text-slate-600 font-semibold text-sm hover:border-sky1 hover:text-sky1 transition" data-filter="utfvi">UTFVI</button>
-            <button class="filter-btn px-5 py-2.5 rounded-full border border-slate-200 bg-white text-slate-600 font-semibold text-sm hover:border-sky1 hover:text-sky1 transition" data-filter="layout">Layout</button>
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="lst">LST</button>
+            <button class="filter-btn" data-filter="lulc">LULC</button>
+            <button class="filter-btn" data-filter="utfvi">UTFVI</button>
+            <button class="filter-btn" data-filter="layout">Layout</button>
         </div>
 
-        <div class="gallery-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="gallery-grid">
 
             <figure class="gallery-item" data-category="lst" data-src="Gallery/Hexa-LST-2025.png">
                 <img src="Gallery/Hexa-LST-2025.png" alt="LST 2025" loading="lazy">
@@ -383,105 +336,75 @@
     </div>
 </section>
 
-<!-- ==================================================
-     CV
-     ================================================== -->
-<section class="py-24 px-6 bg-slate-50" id="cv">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-ink mb-2">Curriculum Vitae</h2>
-        <div class="w-16 h-1 bg-gradient-to-r from-sky1 to-sky2 rounded-full mb-4"></div>
-        <p class="text-slate1 mb-10 max-w-2xl">Download my full CV for details on education, research, projects and technical skills.</p>
+<!-- ============ CV ============ -->
+<section class="section section-cv" id="cv">
+    <div class="container">
+        <h2 class="section-title">Curriculum Vitae</h2>
+        <p class="section-intro">
+            Download my full CV for details on education, research, projects and technical skills.
+        </p>
 
-        <div class="flex flex-wrap items-center gap-6 bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky1 to-blue-800 flex items-center justify-center text-3xl text-white flex-shrink-0">
-                <i class="fa-solid fa-file-pdf"></i>
+        <div class="cv-card">
+            <div class="cv-icon"><i class="fa-solid fa-file-pdf"></i></div>
+            <div class="cv-text">
+                <h3>Sultan Mohammad Haidari — CV 2026</h3>
+                <p>Urban Planner · GIS Analyst · Remote Sensing · Urban Analytics</p>
             </div>
-            <div class="flex-1 min-w-[220px]">
-                <h3 class="font-display text-lg font-bold text-ink mb-1">Sultan Mohammad Haidari — CV 2026</h3>
-                <p class="text-slate1 text-sm">Urban Planner · GIS Analyst · Remote Sensing · Urban Analytics</p>
-            </div>
-            <a href="images/CV_2026.pdf" download
-               class="inline-flex items-center gap-2 bg-gradient-to-br from-sky1 to-sky2 text-white px-6 py-3.5 rounded-full font-semibold shadow-lg shadow-sky-500/30 hover:-translate-y-px transition">
+            <a href="images/CV_2026.pdf" download class="btn btn-primary">
                 <i class="fa-solid fa-download"></i> Download CV
             </a>
         </div>
     </div>
 </section>
 
-<!-- ==================================================
-     CONTACT
-     ================================================== -->
-<section class="py-24 px-6 bg-white text-center" id="contact">
-    <div class="max-w-3xl mx-auto">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-ink mb-2 inline-block">Let's Connect</h2>
-        <div class="w-16 h-1 bg-gradient-to-r from-sky1 to-sky2 rounded-full mb-4 mx-auto"></div>
-        <p class="text-slate1 mb-10">
+<!-- ============ CONTACT ============ -->
+<section class="section section-contact" id="contact">
+    <div class="container">
+        <h2 class="section-title center">Let's Connect</h2>
+        <p class="section-intro center">
             Interested in urban planning, GIS, spatial data, remote sensing or urban analytics?
             I'd love to hear from you.
         </p>
 
-        <div class="flex flex-wrap justify-center gap-3">
+        <div class="contact-buttons">
 
-            <!-- WhatsApp -->
-            <a href="https://wa.me/93779144871" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-3.5 rounded-full font-semibold shadow-lg shadow-green-500/30 hover:-translate-y-px transition">
-                <i class="fa-brands fa-whatsapp text-lg"></i>
-                WhatsApp
+            <a href="https://wa.me/93779144871" target="_blank" rel="noopener" class="contact-btn whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
 
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/sultan-mohammad-haidari-6aa6632a9" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2.5 bg-[#0A66C2] hover:bg-[#0952a0] text-white px-6 py-3.5 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:-translate-y-px transition">
-                <i class="fa-brands fa-linkedin-in text-lg"></i>
-                LinkedIn
+            <a href="https://www.linkedin.com/in/sultan-mohammad-haidari-6aa6632a9" target="_blank" rel="noopener" class="contact-btn linkedin">
+                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
             </a>
 
-            <!-- Email -->
-            <a href="mailto:sultan.m.haidari74@gmail.com"
-               class="inline-flex items-center gap-2.5 bg-gradient-to-br from-sky1 to-sky2 text-white px-6 py-3.5 rounded-full font-semibold shadow-lg shadow-sky-500/30 hover:-translate-y-px transition">
-                <i class="fa-solid fa-envelope text-lg"></i>
-                Email
+            <a href="mailto:sultan.m.haidari74@gmail.com" class="contact-btn email">
+                <i class="fa-solid fa-envelope"></i> Email
             </a>
 
         </div>
     </div>
 </section>
 
-<!-- ==================================================
-     FOOTER
-     ================================================== -->
-<footer class="bg-ink text-slate-400 text-center py-10 px-6">
-    <p class="text-sm">© 2026 Haidari Spatial Lab · Sultan Mohammad Haidari</p>
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <p>© 2026 Haidari Spatial Lab · Sultan Mohammad Haidari</p>
 </footer>
 
-<!-- ==================================================
-     MODAL (Projects & Research)
-     ================================================== -->
-<div id="modal" class="hidden fixed inset-0 z-[9999] items-center justify-center p-5">
-    <div class="modal-backdrop absolute inset-0 bg-ink2/85 backdrop-blur-md cursor-pointer"></div>
-    <div class="relative bg-white rounded-3xl max-w-3xl w-full max-h-[88vh] overflow-y-auto p-10 shadow-2xl">
-        <button class="modal-close absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 text-2xl flex items-center justify-center transition">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div id="modalBody" class="text-slate-700"></div>
+<!-- ============ MODAL ============ -->
+<div id="modal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+        <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+        <div id="modalBody"></div>
     </div>
 </div>
 
-<!-- ==================================================
-     LIGHTBOX (Gallery)
-     ================================================== -->
-<div id="lightbox" class="hidden fixed inset-0 z-[10000] items-center justify-center bg-ink2/95 p-10">
-    <button id="lightboxClose" class="absolute top-5 right-5 w-12 h-12 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-2xl flex items-center justify-center hover:bg-white/20 transition">
-        <i class="fa-solid fa-xmark"></i>
-    </button>
-    <button id="lightboxPrev" class="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-2xl flex items-center justify-center hover:bg-white/20 transition">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
-    <img id="lightboxImage" src="" alt="" class="max-w-[92vw] max-h-[82vh] object-contain rounded-lg shadow-2xl">
-    <button id="lightboxNext" class="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white text-2xl flex items-center justify-center hover:bg-white/20 transition">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
-    <div id="lightboxCaption" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm px-6 py-2.5 bg-white/10 backdrop-blur rounded-full font-medium"></div>
+<!-- ============ LIGHTBOX ============ -->
+<div id="lightbox" class="lightbox">
+    <button id="lightboxClose" class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+    <button id="lightboxPrev" class="lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <img id="lightboxImage" src="" alt="">
+    <button id="lightboxNext" class="lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+    <div id="lightboxCaption" class="lightbox-caption"></div>
 </div>
 
 <script src="move.js"></script>
