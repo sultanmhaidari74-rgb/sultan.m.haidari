@@ -6,15 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const lockScroll   = () => { document.body.style.overflow = 'hidden'; };
     const unlockScroll = () => { document.body.style.overflow = ''; };
 
-    // Safety: unlock whenever modal/lightbox is NOT visible
     const ensureScrollUnlocked = () => {
-        const modalOpen = document.getElementById('modal')?.classList.contains('active');
+        const modalOpen    = document.getElementById('modal')?.classList.contains('active');
         const lightboxOpen = document.getElementById('lightbox')?.classList.contains('active');
         if (!modalOpen && !lightboxOpen) unlockScroll();
     };
 
     /* ---------- MOBILE NAV ---------- */
-    const navToggle = document.getElementById('navToggle');
+    const navToggle  = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     if (navToggle && mobileMenu) {
         navToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
@@ -167,19 +166,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- KEYBOARD ---------- */
     document.addEventListener('keydown', e => {
-        // Lightbox keys
         if (lightbox.classList.contains('active')) {
             if (e.key === 'Escape')     closeLightbox();
             if (e.key === 'ArrowRight') nextImage();
             if (e.key === 'ArrowLeft')  prevImage();
         }
-        // Modal keys
         if (modal.classList.contains('active') && e.key === 'Escape') {
             closeModal();
         }
     });
 
-    /* ---------- SAFETY: unlock on window blur / resize ---------- */
+    /* ---------- SAFETY ---------- */
     window.addEventListener('blur', ensureScrollUnlocked);
     window.addEventListener('resize', ensureScrollUnlocked);
 
